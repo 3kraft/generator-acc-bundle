@@ -1,0 +1,18 @@
+{
+  "name": "<%- name %>",
+  "addedBy": "<%- authorName %>",
+  "author": "<%- authorName %>",
+  "displayName": "<%- displayName %>",
+  "version": "<%- version %>",
+  "facets": ["custom"],
+  "dependencies": ["java-agent"],
+  "enhances": [],
+  "excludes": [],
+  "compatibility": {
+    "osName": ["windows"],
+    "agentVersion": ">=10.7, <=99.99"
+  },
+  "specificationVersion": "2",
+  "type": "java",
+  "dynamic": true
+}

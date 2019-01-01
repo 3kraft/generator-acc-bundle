@@ -1,0 +1,4 @@
+SetFlag: <%- name %>Tracing
+
+IdentifyClassAs: com.example.Hello <%- name %>Tracing
+TraceAllComplexMethodsIfFlagged: <%- name %>Tracing BlamePointTracer "ExampleService|{classname}|{method}"
