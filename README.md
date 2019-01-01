@@ -1,14 +1,13 @@
-# generator-acc-bundle [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
+# generator-acc-bundle
 > A Generator for [CA APM](https://docops.ca.com/ca-apm/10-7) [ACC Bundles](https://docops.ca.com/ca-apm/10-7/en/implementing-agents/deploy-agent-packages-using-apm-command-center)
 
 ## Installation
 
 First, install [Yeoman](http://yeoman.io) and generator-acc-bundle using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
-```bash
-npm install -g yo
-npm install -g generator-acc-bundle
-```
+Note: This is not yet published, so installation via npm is not yet possible. Use
+
+```git clone``` and ```npm link```.
 
 Then generate your new project:
 
