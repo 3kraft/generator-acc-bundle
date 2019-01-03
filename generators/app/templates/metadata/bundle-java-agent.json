@@ -9,7 +9,6 @@
   "enhances": [],
   "excludes": [],
   "compatibility": {
-    "osName": ["windows"],
     "agentVersion": ">=10.7, <=99.99"
   },
   "specificationVersion": "2",
