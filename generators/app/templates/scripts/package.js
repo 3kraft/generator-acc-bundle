@@ -11,7 +11,8 @@ tar.c(
     filter: function(entryPath, stat) {
       return !path.basename(entryPath).startsWith(".");
     },
-    cwd: "src"
+    cwd: "src",
+    portable: true
   },
   files
 )
