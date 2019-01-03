@@ -124,17 +124,16 @@ module.exports = class extends Generator {
       description: this.props.description,
       homepage: this.props.homepage,
       scripts: {
-        predist: 'npm version patch',
+        predist: 'npm --no-git-tag-version version patch',
         postversion:
           'json -I -f src/metadata/bundle.json -e "this.version=\\"$npm_package_version\\""',
-        dist:
-          'mkdirp dist && cd src/ && bestzip ../dist/${npm_package_name}-${npm_package_version}.zip *' // eslint-disable-line no-template-curly-in-string
+        dist: 'mkdirp dist && node scripts/package.js dist/$npm_package_name.tar.gz'
       },
       repository: this.props.repositoryName,
       devDependencies: {
         json: '^9.0.6',
-        bestzip: '^2.1.2',
-        mkdirp: '^0.5.1'
+        mkdirp: '^0.5.1',
+        tar: '^4.4.8'
       }
     });
 
@@ -142,6 +141,11 @@ module.exports = class extends Generator {
     this.log(pkg);
 
     this.fs.writeJSON(this.destinationPath('package.json'), pkg);
+    this.fs.copy(this.templatePath('.gitignore'), this.destinationPath('.gitignore'));
+    this.fs.copy(
+      this.templatePath('scripts/package.js'),
+      this.destinationPath('scripts/package.js')
+    );
     this.fs.copyTpl(
       this.templatePath('README.md'),
       this.destinationPath('src/README.md'),
